@@ -1,0 +1,15 @@
+### Cadastrar Consumo - POST
+POST http://localhost:5171/api/consumo/cadastrar
+
+### Listar Consumo - GET
+GET http://localhost:5171/api/consumo/listar
+
+### Buscar Consumo -GET
+GET http://localhost:5171/api/consumo/buscar/{cpf}/{mês}/{ano}
+
+### Remover Consumo - DELETE
+DELETE http://localhost:5171/api/consumo/remover/{cpf}/{mês}/{ano}
+
+### Total Geral de Faturas - GET
+GET http://localhost:5171/api/consumo/total-geral
+
