@@ -1,15 +1,17 @@
 ### Cadastrar Consumo - POST
-POST http://localhost:5171/api/consumo/cadastrar
+POST http://localhost:5171/AntonyWippich/consumo/cadastrar
+
+
 
 ### Listar Consumo - GET
-GET http://localhost:5171/api/consumo/listar
+GET http://localhost:5171/AntonyWippich/consumo/listar
 
 ### Buscar Consumo -GET
-GET http://localhost:5171/api/consumo/buscar/{cpf}/{mês}/{ano}
+GET http://localhost:5171/AntonyWippich/consumo/buscar/{cpf}/{mês}/{ano}
 
 ### Remover Consumo - DELETE
-DELETE http://localhost:5171/api/consumo/remover/{cpf}/{mês}/{ano}
+DELETE http://localhost:5171/AntonyWippich/consumo/remover/{cpf}/{mês}/{ano}
 
 ### Total Geral de Faturas - GET
-GET http://localhost:5171/api/consumo/total-geral
+GET http://localhost:5171/AntonyWippich/consumo/total-geral
 
