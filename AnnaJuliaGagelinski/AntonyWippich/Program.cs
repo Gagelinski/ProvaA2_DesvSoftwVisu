@@ -93,16 +93,50 @@ app.MapPost("AntonyWippich/consumo/cadastrar", async ([FromBody] Cliente cliente
 app.MapGet("AntonyWippich/consumo/listar", async (AppDbContext db) =>
 {
     var cliente = db.Clientes.ToList();
+
+    if (cliente is null)
+    {
+        return Results.BadRequest("Não existem registros");
+    }
     return Results.Ok(cliente);
 });
 
 
-app.MapGet("AntonyWippich/consumo/buscar/{cpf}/{mês}/{ano}", async (string cpf, int mes, int ano, AppDbContext db) =>
+app.MapGet("AntonyWippich/consumo/buscar/{cpf}", async (string cpf, AppDbContext db) =>
 {
     var cliente = await db.Clientes.Where(c => c.cpf.Contains(cpf)).ToListAsync();
-
     return cliente.Any() ? Results.Ok(cliente) : Results.NotFound("Registro não encontrado");
- });
+});
+
+
+app.MapDelete("AntonyWippich/consumo/remover/{cpf}", async ([FromBody]string cpf, AppDbContext db) =>
+{
+    var cliente = await db.Clientes.FindAsync(cpf);
+    if (cliente == null)
+    {
+        return Results.NotFound("Registro não encontrado.");
+    }
+
+    db.Clientes.Remove(cliente);
+    await db.SaveChangesAsync();
+    return Results.Ok("Registro removido com sucesso.");
+});
+ 
+ 
+
+app.MapGet("AntonyWippich/consumo/total-geral", async (Cliente clientes, AppDbContext db) =>
+{
+    var totalGeral = db.Clientes.ToList();
+
+    if (totalGeral is null)
+    {
+        return Results.BadRequest("Não existem registros");
+    }
+return Results.Ok(totalGeral);
+});
+
+
+
 
 
 

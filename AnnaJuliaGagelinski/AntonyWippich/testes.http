@@ -3,7 +3,7 @@ POST http://localhost:5171/AntonyWippich/consumo/cadastrar
 Content-Type: application/json
 
 {
-  "cpf": "123.456.789-01",
+  "cpf": "123.456.789-03",
   "mes": 10,
   "ano": 2025,
   "m3Consumidos": 10,
@@ -17,12 +17,12 @@ Content-Type: application/json
 GET http://localhost:5171/AntonyWippich/consumo/listar
 
 ### Buscar Consumo -GET
-GET http://localhost:5171/AntonyWippich/consumo/buscar/123.456.789-01/11/2025
+GET http://localhost:5171/AntonyWippich/consumo/buscar/123.456.789-03
 
 
 
 ### Remover Consumo - DELETE
-DELETE http://localhost:5171/AntonyWippich/consumo/remover/{cpf}/{mês}/{ano}
+DELETE http://localhost:5171/AntonyWippich/consumo/remover/123.456.789-03
 
 ### Total Geral de Faturas - GET
 GET http://localhost:5171/AntonyWippich/consumo/total-geral
