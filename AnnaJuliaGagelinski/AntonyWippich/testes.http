@@ -1,5 +1,15 @@
 ### Cadastrar Consumo - POST
 POST http://localhost:5171/AntonyWippich/consumo/cadastrar
+Content-Type: application/json
+
+{
+  "cpf": "123.456.789-01",
+  "mes": 10,
+  "ano": 2025,
+  "m3Consumidos": 10,
+  "bandeira": "Amarela",
+  "possuiEsgoto": true
+}
 
 
 
@@ -7,7 +17,9 @@ POST http://localhost:5171/AntonyWippich/consumo/cadastrar
 GET http://localhost:5171/AntonyWippich/consumo/listar
 
 ### Buscar Consumo -GET
-GET http://localhost:5171/AntonyWippich/consumo/buscar/{cpf}/{mês}/{ano}
+GET http://localhost:5171/AntonyWippich/consumo/buscar/123.456.789-01/11/2025
+
+
 
 ### Remover Consumo - DELETE
 DELETE http://localhost:5171/AntonyWippich/consumo/remover/{cpf}/{mês}/{ano}
